@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Book</title>
+    <link rel="stylesheet" href="book.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Picture1.png" alt="Book Cover" class="book-image">
+        <h1>Essentials of Systems
+            Analysis and Design</h1>
+        <!-- <a href="Essentials_of_Systems.pdf" download="Essentials_of_Systems.pdf" class="download-button" id="download-link">Download Now</a> -->
+         <!-- From Uiverse.io by satyamchaudharydev -->
+          <div class="container1">        
+<div class="button" data-tooltip="Size: 50Mb">
+    <div class="button-wrapper">
+        <a href="Essentials_of_Systems.pdf" download="Essentials_of_Systems.pdf"id="download-link"><div class="text" >Download</div>
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
+        </span>
+      </div>
+    </div>
+        <div class="loading-bar hidden" id="loading-bar"></div>
+    </div></a>
+
+    <script>
+        // Optional: Add a loading animation when the link is clicked
+        const downloadLink = document.getElementById('download-link');
+        const loadingBar = document.getElementById('loading-bar');
+
+        downloadLink.addEventListener('click', () => {
+            // Show the loading bar
+            loadingBar.classList.remove('hidden');
+
+            // Simulate loading progress
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    // Reset the loading bar after download starts
+                    loadingBar.classList.add('hidden');
+                    loadingBar.style.width = '0%';
+                } else {
+                    width += 10;
+                    loadingBar.style.width = `${width}%`;
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
